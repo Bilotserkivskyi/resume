@@ -39,18 +39,18 @@
 
       {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   --}}
       {{{body}}}
+      
+      {{>footer}}
+      {{!-- <br>
+      <hr>
 
-    {{>footer}}
-
-      {{!-- {{#with footer}}
+      {{#with footer}}
         <footer>
-            <hr>
-            <br>
             <div>
               {{#with social}}            
                   {{> link text=email.text href=email.href blank=true }}                
                   {{> link text=phone.text href=phone.href blank=true }}            
-                  {{> link text=linkedin.text href=linkedin.href blank=true }}           
+                  {{> link text=linkedin.text href=linkedin.href blank=true noLine=true }}           
               {{/with}}
             </div>
             <br>
