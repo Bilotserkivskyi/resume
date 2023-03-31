@@ -1,0 +1,30 @@
+<p>
+    <dl>
+        <dt><b><cite>{{name}}<cite></b></dt>
+    <details>
+        <summary>
+            <dd><cite>Author:
+                {{#unless artist include=Zero}}
+                    Unknown
+                    {{else}}
+                    {{artist}}                    
+                {{/unless}}
+                <cite>
+
+            </dd>
+        </summary>
+        <summary>
+            <dd>{{description}}</dd>
+        </summary>
+        <summary>
+            <dd>Audio guide:
+                {{#if audio_guide}}
+                  Yes
+                {{else}}
+                   No
+                {{/if}}
+            </dd>
+        </summary>
+    </details>
+    </dl>                                
+</p>
