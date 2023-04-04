@@ -1,0 +1,93 @@
+<div>
+    <main>
+       <div>
+        <section>         
+          <h1>{{name}}</h1>
+          <hr>
+          <hr>
+        </section>        
+
+        <div>
+            <h2>Users:</h2>
+           
+            <div>
+                <ol>
+                {{#each users}}
+                    <div>
+                        <li>{{>user}}</li>           
+                        <br>
+                        
+                        <div>                                                    
+                            <h3><u>Friends:</u></h3>
+                                                                           
+                            <ol>
+                                {{#each friends}}
+                               <li>{{>user}}</li>
+                                <br>
+                                <h4>Mutural friends:</h4>
+                                    <div>
+                                        <ol>
+                                        {{#each mutual_friends}}
+                                           <li>{{>user}}</li>
+                                        {{/each}}
+                                        </ol>
+                                    </div>
+                                     <br>
+
+                                    <div>
+                                        {{#if groups}}
+                                        <h4><u>Groups:</u></h4>
+                                        {{/if}}
+                                        <ol type="I">
+                                        {{#each groups}}
+                                           <li>{{>group}}</li>
+                                           <br>
+                                                <div>
+                                                    
+                                                    <h4>Members:</h4>
+                                                    <p>
+                                                        <ol>
+                                                        {{#each members}}
+                                                        <li>{{>user}}</li>
+                                                        {{/each}}
+                                                        </ol>
+                                                    </p>
+                                                </div>
+                                        {{/each}}
+                                        </ol>
+                                        <br>
+                                    </div>
+                                {{/each}}
+                            
+                            </ol>                                                  
+                        </div>                        
+
+                        <div>                            
+                            {{#if groups}}
+                            <h3><u>Groups:</u></h3>
+                            {{/if}}
+                           
+                            <ol type="I">
+                                {{#each groups}}
+                                 <li>{{>group}}</li>                                  
+                                    <div>
+                                        <h4>Members:</h4> 
+                                        <ol>                                      
+                                        {{#each members}}
+                                           <li>{{>user}}</li>
+                                        {{/each}}
+                                        </ol>                                       
+                                    </div>
+                                {{/each}}
+                            </ol>
+                            
+                           
+                        </div>
+                        <br>
+                    </div>
+                {{/each}}
+                </ol>
+            </div>
+        </div>
+    </main>
+</div>
