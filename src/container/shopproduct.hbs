@@ -1,0 +1,131 @@
+<div>
+    <main>
+        <div class="row">
+            <div class="col-12">
+                <div>
+                    <nav class="breadcrumb">
+                        {{#each breadcrumb}}
+                            <a class="breadcrumb-item nav-link {{#if url}} active text-primary {{else}} disabled {{/if}}" href="{{url}}">{{name}}</a>                            
+                        {{/each}}
+                    </nav>              
+                </div>
+            </div>
+
+            <div class="row mg-2">
+                {{#with productData}}
+                    <div>               
+                        <img class="col-6 my-4 pe-3" src="{{img}}">
+
+                        
+                    </div>
+                    {{#with info}}
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h6>{{title}}</h6>
+                                <p>{{about}}</p>
+                                <div>
+                                    <div>
+                                        <span class="display-6">{{price}}</span>
+                                    </div>
+                                        {{#each category}}
+                                            <span class="badge {{#if isHot}} text-bg-warning {{/if}} text-light rounded-pill {{#if isNew}} text-bg-primary {{/if}} text-light rounded-pill {{#if isBonus}} text-bg-info {{/if}} text-light rounded-pill">                                                
+                                                {{name}}
+                                            </span>
+                                        {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/with}}
+                    <div class="card col-12 mt-4">
+                        <div class="row">
+                            {{#each actionList}}
+                                <span class="col-3">
+                                    <span class="card my-1 me-3">
+                                        <button class="btn {{#if isWarning}}btn-warning {{/if}} {{#if isError}} btn-outline-danger {{/if}} {{#if isSuccess}} btn-success {{/if}} {{#if isGood}} btn-outline-success {{/if}}">
+                                            {{name}}
+                                        </button>
+                                    </span>
+                                </span>
+                            {{/each}}
+                        </div>
+                    </div>
+                    {{!-- tabl --}}
+                    <div class="row mt-5">
+                        <div class="col-6">
+                            <table class="table">
+                                {{#with item}}
+                                    <thead>
+                                        <tr>
+                                        {{#each head}}
+                                            <th>{{this}}</th>
+                                        {{/each}}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each body}}
+                                            <tr>
+                                                {{#each this}}
+                                                <td>{{this}}</td> 
+                                                {{/each}}
+                                            </tr>
+                                        {{/each}}
+                                    </tbody>
+                                {{/with}}
+                            </table>
+                        </div>
+                    </div>
+                    {{!-- tabl --}}
+                    <div class="row">
+                        {{#with param}}
+                            <div class="col-6">
+                                <div class="card">
+                                    <h4 class="card-title ms-4 text-bg-light">{{title}}</h4>
+                                        <div class="list list-group">
+                                            {{#each list}}
+                                                <div class="list list-group-item">{{this}}</div>
+                                            {{/each}}
+                                        </div>
+                                </div>
+                            </div>
+                        {{/with}}
+                    </div>
+                {{/with}}
+            </div>
+            <div>
+                <div>
+                    {{#with goodsOtherBlock}}
+                        <h3 class="mt-5 text-center">{{title}}</h3>
+                        <div class="row">
+                            {{#each cards}}
+                            <div class="col-4 mt-4">
+                                <div class="card">
+                                        <img class="card-img-top" src="{{image}}">
+                                    <div class="card-body">
+                                        <h6>
+                                            {{title}}
+                                            <span class="badge {{#if isHot}} text-bg-warning text-light {{/if}} {{#if idNew}} text-bg-primary text-light {{/if}} rounded-pill">
+                                                {{#if isHot}} HOT {{/if}} {{#if idNew}} Нове {{/if}}
+                                            </span>
+                                        </h6>
+                                        <p>
+                                            {{description}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+
+
+                    {{/with}}
+                </div>
+            </div>
+
+            <div>
+               {{>our_service}}
+            </div>
+        </div>
+    </main>
+</div>
