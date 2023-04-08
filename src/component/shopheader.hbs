@@ -1,24 +1,12 @@
-<div class="row">
-    <div class="col-12">
-    {{#with navigation}}
-        <div>
-            <div class="card">
-                <div class="row">
-                    <h1 class="col-3">{{Logo}}</h1>
+<div class="card text-bg-light"> 
+    <div class="row">
+        {{#with navigation}}
+            <h1 class="col-6 ps-4">{{Logo}}</h1>
+            {{#each links}}
+                <div class="col-2 nav mt-1">
+                    <a class="nav-item nav-link" href="{{href}}">{{text}}</a>
                 </div>
-                    <div class="row">                           
-                        {{#each links}}
-                            
-                                <div class="nav col-2">
-                                    <div>
-                                        <a class="nav-item nav-link" href="{{href}}">{{text}}</a>
-                                    </div>
-                                </div>
-                            
-                        {{/each}} 
-                    </div>
-            </div>
-        </div>
-    {{/with}}
+            {{/each}}
+        {{/with}}
     </div>
 </div>
