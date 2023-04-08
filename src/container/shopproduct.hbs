@@ -2,25 +2,20 @@
     <main>
         <div class="row">
             <div class="col-12">
-                <div>
-                    <nav class="breadcrumb">
-                        {{#each breadcrumb}}
-                            <a class="breadcrumb-item nav-link {{#if url}} active text-primary {{else}} disabled {{/if}}" href="{{url}}">{{name}}</a>                            
-                        {{/each}}
-                    </nav>              
-                </div>
+                <nav class="breadcrumb">
+                    {{#each breadcrumb}}
+                        <a class="breadcrumb-item nav-link {{#if url}} active text-primary {{else}} disabled {{/if}}" href="{{url}}">{{name}}</a>                            
+                    {{/each}}
+                </nav>
             </div>
+        </div>
 
-            <div class="row mg-2">
-                {{#with productData}}
-                    <div>               
-                        <img class="col-6 my-4 pe-3" src="{{img}}">
-
-                        
-                    </div>
+        <div class="row">
+            {{#with productData}}
+                <div class="col-6 me-5">
+                    <img class="col-12 my-4" src="{{img}}">
                     {{#with info}}
-                    <div class="col-6">
-                        <div class="card">
+                        <div class="col-12 card">
                             <div class="card-body">
                                 <h6>{{title}}</h6>
                                 <p>{{about}}</p>
@@ -28,104 +23,105 @@
                                     <div>
                                         <span class="display-6">{{price}}</span>
                                     </div>
-                                        {{#each category}}
-                                            <span class="badge {{#if isHot}} text-bg-warning {{/if}} text-light rounded-pill {{#if isNew}} text-bg-primary {{/if}} text-light rounded-pill {{#if isBonus}} text-bg-info {{/if}} text-light rounded-pill">                                                
-                                                {{name}}
-                                            </span>
-                                        {{/each}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {{/with}}
-                    <div class="card col-12 mt-4">
-                        <div class="row">
-                            {{#each actionList}}
-                                <span class="col-3">
-                                    <span class="card my-1 me-3">
-                                        <button class="btn {{#if isWarning}}btn-warning {{/if}} {{#if isError}} btn-outline-danger {{/if}} {{#if isSuccess}} btn-success {{/if}} {{#if isGood}} btn-outline-success {{/if}}">
+                                    {{#each category}}
+                                        <span class="badge {{#if isHot}} text-bg-warning {{/if}} text-light rounded-pill {{#if isNew}} text-bg-primary {{/if}} text-light rounded-pill {{#if isBonus}} text-bg-info {{/if}} text-light rounded-pill">                                                
                                             {{name}}
-                                        </button>
-                                    </span>
-                                </span>
-                            {{/each}}
-                        </div>
-                    </div>
-                    {{!-- tabl --}}
-                    <div class="row mt-5">
-                        <div class="col-6">
-                            <table class="table">
-                                {{#with item}}
-                                    <thead>
-                                        <tr>
-                                        {{#each head}}
-                                            <th>{{this}}</th>
-                                        {{/each}}
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {{#each body}}
-                                            <tr>
-                                                {{#each this}}
-                                                <td>{{this}}</td> 
-                                                {{/each}}
-                                            </tr>
-                                        {{/each}}
-                                    </tbody>
-                                {{/with}}
-                            </table>
-                        </div>
-                    </div>
-                    {{!-- tabl --}}
-                    <div class="row">
-                        {{#with param}}
-                            <div class="col-6">
-                                <div class="card">
-                                    <h4 class="card-title ms-4 text-bg-light">{{title}}</h4>
-                                        <div class="list list-group">
-                                            {{#each list}}
-                                                <div class="list list-group-item">{{this}}</div>
-                                            {{/each}}
-                                        </div>
+                                        </span>
+                                    {{/each}}
                                 </div>
                             </div>
-                        {{/with}}
-                    </div>
-                {{/with}}
-            </div>
-            <div>
-                <div>
-                    {{#with goodsOtherBlock}}
-                        <h3 class="mt-5 text-center">{{title}}</h3>
-                        <div class="row">
-                            {{#each cards}}
-                            <div class="col-4 mt-4">
-                                <div class="card">
-                                        <img class="card-img-top" src="{{image}}">
-                                    <div class="card-body">
-                                        <h6>
-                                            {{title}}
-                                            <span class="badge {{#if isHot}} text-bg-warning text-light {{/if}} {{#if idNew}} text-bg-primary text-light {{/if}} rounded-pill">
-                                                {{#if isHot}} HOT {{/if}} {{#if idNew}} Нове {{/if}}
-                                            </span>
-                                        </h6>
-                                        <p>
-                                            {{description}}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            {{/each}}
                         </div>
-
-
                     {{/with}}
                 </div>
-            </div>
+                {{!-- start-Table --}}
+                <div class="col-5 mt-4 ms-2">
+                    <table class="table">
+                        {{#with item}}
+                            <thead>
+                                <tr>
+                                {{#each head}}
+                                    <th>{{this}}</th>
+                                {{/each}}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each body}}
+                                    <tr>
+                                        {{#each this}}
+                                        <td>{{this}}</td> 
+                                        {{/each}}
+                                    </tr>
+                                {{/each}}
+                            </tbody>
+                        {{/with}}
+                    </table>
+                    {{!-- end-Table --}}
+                    {{#with param}}
+                        <div class="card mt-2">
+                            <h4 class="card-title ms-4 text-bg-light">{{title}}</h4>
+                            <div class="list list-group">
+                                {{#each list}}
+                                    <div class="list list-group-item">{{this}}</div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    {{/with}}
 
+                    {{#with alert}}
+                        <div class="col-12">
+                            <div class="alert alert-danger mt-3">{{#if isError}}<small>{{text}}</small>{{/if}}</div>
+                        </div>
+                    {{/with}}
+                </div>
+                
+                <div class="row card mt-4 ms-2 me-5">
+                    <div class="col-12">
+                        {{#each actionList}}
+                            <button class="me-3 my-2 pe-5 btn
+                                {{#if isWarning}}btn-warning {{/if}}
+                                {{#if isError}} btn-outline-danger {{/if}}
+                                {{#if isSuccess}} btn-success {{/if}}
+                                {{#if isGood}} btn-outline-success {{/if}}">
+                                {{name}}
+                            </button>
+                        {{/each}}
+                    </div>
+                </div>
+            {{/with}}
+        </div>
+
+        <div>
             <div>
-               {{>our_service}}
+                {{#with goodsOtherBlock}}
+                    <h3 class="mt-5 text-center">{{title}}</h3>
+                    <div class="row">
+                        {{#each cards}}
+                        <div class="col-4 mt-4">
+                            <div class="card">
+                                    <img class="card-img-top" src="{{image}}">
+                                <div class="card-body">
+                                    <h6>
+                                        {{title}}
+                                        <span class="badge {{#if isHot}} text-bg-warning text-light {{/if}} {{#if idNew}} text-bg-primary text-light {{/if}} rounded-pill">
+                                            {{#if isHot}} HOT {{/if}} {{#if idNew}} Нове {{/if}}
+                                        </span>
+                                    </h6>
+                                    <p>
+                                        {{description}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+
+
+                {{/with}}
             </div>
+        </div>
+
+        <div>
+            {{>our_service}}
         </div>
     </main>
 </div>

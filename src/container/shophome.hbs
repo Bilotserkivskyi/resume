@@ -1,32 +1,6 @@
 <div>
     <main>
         <div class="row">
-            <div class="col-12">
-                 <div class="card">
-                    {{#with navigation}}
-                        {{!-- <div class="row">                   --}}
-                            <div class="col-4">
-                                <h1 class="m-3">{{Logo}}</h1>
-                            </div>
-                        {{!-- </div>  --}}
-                        {{!-- <div class="row"> --}}
-                                <div class="">
-                                    <div class="row">                           
-                                        {{#each links}}
-                                            <div class="col-2">
-                                                <div class="nav">
-                                                    <div class="nav-item m-3">
-                                                        <a class="nav-link" href="{{href}}">{{text}}</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        {{/each}} 
-                                    </div>
-                                </div>                               
-                        {{!-- </div>       --}}
-                    {{/with}}
-                </div> 
-            </div>
 
             <div class="mt-5">
                 {{#with newsBlock}}
@@ -95,23 +69,22 @@
                     </dive>
                 {{/with}}
             </div>
+            <hr class="my-5">
 
-            <div class="col-12 card text-bg-dark">
-                {{#with subscribe}}
-                    <div>
-                        <h2 class="mt-4 ms-3">{{header}}</h2>
-                        <p class="ms-3">{{description}}</p>
-                        <div class="row">
-                            {{#each buttons}}
-                                <div class="col-5 mb-3 ms-5">
-                                    <div>
-                                        <button class="btn btn-primary" href="{{link}}">{{text}}</button>
-                                    </div>                          
-                                </div>
-                            {{/each}}
+            <div class="card text-bg-dark">
+                <div class="row">
+                    {{#with subscribe}}
+                        <div class="col-6">
+                            <h4 class="mt-4 ms-3">{{header}}</h4>
+                            <p class="ms-3">{{description}}</p>
                         </div>
-                    </div>
-                {{/with}}
+                        {{#each buttons}}
+                            <span class="col-3">
+                                <button class="btn btn-primary btn-sm my-5" href="{{link}}">{{text}}</button>
+                            </span>
+                        {{/each}}
+                    {{/with}}
+                </div>
             </div>
             <hr class="my-5">
 
