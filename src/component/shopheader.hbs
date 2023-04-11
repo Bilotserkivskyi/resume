@@ -1,11 +1,15 @@
 <div class="card text-bg-light"> 
     <div class="row">
         {{#with navigation}}
-            <h1 class="col-6 ps-4">{{Logo}}</h1>
+            <h1 class="col-4 ps-4">{{Logo}}</h1>
             {{#each links}}
-                <div class="col-2 nav mt-1">
-                    <a class="nav-item nav-link" href="{{href}}">{{text}}</a>
-                </div>
+                <span class="col-1 nav mt-1 ms-2 px-5">
+                    <a class="nav-item nav-link
+                    {{#if href}} active {{else}} disabled {{/if}}"
+                    href="{{href}}">
+                    {{text}}
+                    </a>
+                </span>
             {{/each}}
         {{/with}}
     </div>
