@@ -1,0 +1,50 @@
+<div>
+    <main>
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    {{#with header}}
+                        <h1 class="col-8">{{title}}</h1>
+                            <div class="col-4 mt-2">
+                            {{#with button}}
+                            <button class="btn btn-outline-secondary btn-sm" href="{{link}}">
+                               {{text}}
+                            </button>
+                             {{/with}}
+                             </div>
+                    {{/with}}
+                </div>
+                <hr class="mb-5">
+
+               {{> cartGoodsItem}}
+                
+                <div class="row">
+                    {{#with total}}
+                        <div class="col-7">
+                            <h4>{{title}}</h4>
+                            <span class="display-6">{{amount}}</span><br>
+                            <span><smal>{{delivery}}</smal></span>
+                        </div>
+                        <div class="col-5 mt-1">
+                            {{#each buttons}}
+                                <button class="mb-3 btn btn-sm
+                                    {{#if isSuccess}} btn-success {{/if}}
+                                    {{#if isOutline}} btn-outline-success {{/if}}"
+                                    href="{{link}}">{{text}}
+                                </button>
+                            {{/each}}
+                        </div>
+                    {{/with}}
+                </div>
+                <hr class="my-5">
+
+                <div>
+                    {{> other_products}}
+                </div>
+                <div>
+                    {{> subscribe}}
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

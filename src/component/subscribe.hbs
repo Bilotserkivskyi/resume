@@ -1,0 +1,18 @@
+<div class="card text-bg-dark">
+    <div class="row">
+        {{#with subscribe}}
+            <div class="col-6">
+                <h4 class="mt-4 ms-3">{{header}}</h4>
+                <p class="ms-3"><small>{{description}}</small></p>
+            </div>
+            <div class="col-5 ms-5">
+                {{#each buttons}}
+                    <span>
+                        <button class="ms-2 btn btn-primary btn-sm my-5" href="{{link}}">{{text}}</button>
+                    </span>
+                {{/each}}
+            </div>
+        {{/with}}
+    </div>
+</div>
+<hr class="my-4">

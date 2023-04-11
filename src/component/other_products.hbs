@@ -1,0 +1,26 @@
+<div>
+    {{#with goodsOtherBlock}}
+        <h3 class="mt-5 text-center">{{title}}</h3>
+        <div class="row">
+            {{#each cards}}
+            <div class="col-4 mt-4">
+                <div class="card">
+                        <img class="card-img-top" src="{{image}}">
+                    <div class="card-body">
+                        <h6>
+                            {{title}}
+                            <span class="badge {{#if isHot}} text-bg-warning text-light {{/if}} {{#if idNew}} text-bg-primary text-light {{/if}} rounded-pill">
+                                {{#if isHot}} HOT {{/if}} {{#if idNew}} Нове {{/if}}
+                            </span>
+                        </h6>
+                        <p>
+                            <small>{{description}}</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    {{/with}}
+</div>
+<hr class="my-4">
