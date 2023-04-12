@@ -1,0 +1,42 @@
+<div class="row">
+    {{#each goodsList}}
+        <div class="col-6 g-2">
+            <div class="card">
+                    <img class="card-img-top" src="{{img}}"> 
+                <div class="card-body">
+                    <span class="badge {{#if isHot}} text-bg-warning {{/if}} text-light rounded-pill">
+                        {{#if isHot}} HOT {{/if}}
+                    </span>
+                    <span class="badge {{#if isNew}} text-bg-primary {{/if}} text-light rounded-pill">
+                        {{#if isNew}} Нове {{/if}}
+                    </span>
+                    <div class="mt-4">
+                        <button class="btn btn-sm btn-success"><small>Швидка доставка</small></button>                                                  
+                        <button class="mt-2 btn btn-sm btn-secondary"><small>Безкоштовна доставка</small></button> 
+                        </small>
+                    </div>
+                    <h6 class="mt-3">{{name}}</h6>
+                    {{#with review}}
+                    <span><small>{{amount}} {{text}}</small></span><br>
+                    {{/with}}
+                    <div class="my-2">{{price}}</div>
+                        <span><small>{{delivery}}</small></span> 
+                        <div class="mt-3">
+                        {{#each buttons}}
+                            <button class="mb-2 btn btn-sm {{#if isPrimary}} btn-primary {{/if}}
+                                {{#if isSecondary}} btn-secondary {{/if}}" href="{{link}}">{{text}}
+                            </button>
+                        {{/each}}
+                        </div>
+                        <div class="mt-3">
+                        <ul>
+                            {{#each characteristics}}
+                            <li><small>{{title}} {{value}}</small></li>
+                            {{/each}}
+                        </ul>
+                        </div>            
+                </div>
+            </div>
+        </div>
+    {{/each}}
+</div>
