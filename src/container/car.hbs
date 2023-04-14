@@ -1,9 +1,9 @@
 <div>
     <main>
        <div>
-        <section>
+        <section class="col-6 card text-bg-secondary">
             <h1><strong>{{make}} {{model}}</strong></h1>            
-            <dl>
+            <dl class="ms-5">
                 <dd>Year: {{year}}</dd>
                 <dd>Color: {{color}}</dd>
             </dl>
@@ -16,9 +16,10 @@
                 <hr><hr>                             
                 {{#with features}}
                     <p>
-                    <h3>Interior:</h3>
+                    <h3 class="ms-3">Interior:</h3>
                     <hr>
                     {{#with interior}}
+                    <div class="ms-5">
                         <p>
                             <h4>Seats:</h4>
                             <ul>
@@ -58,56 +59,56 @@
                             {{/with}}
                             </ul>
                         </p>
-
+                    </div>
                     {{/with}}
                     </p>
                     <br>
                     <p>
-                    <h3>Exterior:</h3>
+                    <h3 class="ms-3">Exterior:</h3>
                     <hr>
                     {{#with exterior}}
+                    <div class="ms-5">
                         <p>
                             <h4>Wells:</h4>
-                            <ui>
+                            <ul>
                             {{#with wheels}}
                                 <li>Size: {{size}}</li>
                                 <li>Type: {{type}}</li>
                                 <li>Color: {{color}}</li>
                             {{/with}}
-                            </ui>
+                            </ul>
                         </p>
 
                         <p>
                             <h4>Headlights:</h4>
-                            <ui>
+                            <ul>
                             {{#with headlights}}
                                 <li>Type: <i>{{type}}</i></li>
                                 <li>Brightness: <i>{{brightness}}</i></li>
                                 <li>Automatic: <i>{{#if automatic}} yes {{else}} no {{/if}}</i></li>
                             {{/with}}
-                            </ui>
+                            </ul>
                         </p>
 
                         <p>
                             <h4>Sunroof:</h4>
-                            <ui>
+                            <ul>
                             {{#with sunroof}}
                                 <li>Type: <i>{{type}}</i></li>
                                 <li>Size: <i>{{size}}</i></li>
                                 <li>Automatic: <i>{{#if automatic}} yes {{else}} no {{/if}}</i></li>
                             {{/with}}
-                            </ui>
+                            </ul>
                         </p>
-
-
-
+                    </div>
                     {{/with}}
                     </p>
                     <br>
                     <p>
-                    <h3>Safety:</h3>
+                    <h3 class="ms-3">Safety:</h3>
                     <hr>
                     {{#with safety}}
+                    <div class="ms-5">
                         <p>
                             <h4>Airbags:</h4>
                             <ul>
@@ -132,7 +133,7 @@
                             {{/with}}
                             </ul>
                         </p>
-
+                    </div>
                     {{/with}}                    
                     </p>
                 {{/with}}
@@ -141,9 +142,9 @@
 
             <div>
                 <br>
-                <h2>Engine:</h2>
+                <h2 class="ms-3">Engine:</h2>
                 <hr><hr>
-                <ul>
+                <ul class="ms-5">
                 {{#with engine}}
                     <li>Type: <i>{{type}}</i></li>
                     <li>Displacement: <i>{{displacement}}</i></li>
@@ -160,9 +161,9 @@
 
             <div>
                 <br>
-                <h2>Fuel economy:</h2>
+                <h2 class="ms-3">Fuel economy:</h2>
                 <hr><hr>
-                <ul>
+                <ul class="ms-5">
                 {{#with fuel_economy}}
                     <li>City: {{city}}</li>
                     <li>Highway: {{highway}}</li>
@@ -171,24 +172,26 @@
                 </ul>         
             </div>
 
-            <div>
-                <br>
-                <h2>Price:</h2>
-                <hr><hr>
-                <dl>
-                {{#with price}}
-                    <dt>Base:________________<b>{{base}}</b></dt>
-                    <dt>Destination:_____________<b>{{destination}}</b></dt>
-                    <dt>Options:</dt>
-                        {{#with options}}
-                        <dd><i>Navigation:______</i> {{navigation}}</dd>
-                        <dd><i>Moonroof:________</i> {{moonroof}}</dd>
-                        <dd><i>Premium paint:____</i> {{premium_paint}}</dd>
-                        {{/with}}
-                        <br>
-                    <dt><b>Total:</b>_______________<b>{{total}}</b></dt>          
-                {{/with}}
-                </dl>           
+            <div class="col-6 ms-5 card text-bg-warning">
+                <div class="card-body">
+                    <br>
+                    <h2>Price:</h2>
+                    <hr><hr>
+                    <dl>
+                    {{#with price}}
+                        <dt>Base:________________<b>{{base}}</b></dt>
+                        <dt>Destination:____________<b>{{destination}}</b></dt>
+                        <dt>Options:</dt>
+                            {{#with options}}
+                            <dd><i>Navigation:_______</i> {{navigation}}</dd>
+                            <dd><i>Moonroof:_________</i> {{moonroof}}</dd>
+                            <dd><i>Premium paint:____</i> {{premium_paint}}</dd>
+                            {{/with}}
+                            <br>
+                        <dt><b>Total:</b>_______________<b>{{total}}</b></dt>          
+                    {{/with}}
+                    </dl> 
+                </div>          
             </div>
        </div>
     </main>

@@ -241,7 +241,7 @@ router.get('/work', function (req, res) {
   res.render('work', {
     // ↙ сюди вводимо JSON дані
 
-    layout: 'big',
+    // layout: 'big',
 
     page: {
       title: 'Resume | Work',
@@ -322,7 +322,7 @@ router.get('/work', function (req, res) {
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
-    layout: 'person',
+    layout: 'index',
 
     person: {
       name: 'Emma Johnson',
@@ -426,7 +426,7 @@ router.get('/person', function (req, res) {
 router.get('/bio', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('bio', {
-    layout: 'bio',
+    layout: 'index',
 
     name: 'Albert Einstein',
     birthdate: 'March 14, 1879',
@@ -524,7 +524,7 @@ router.get('/bio', function (req, res) {
 router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('program', {
-    layout: 'program',
+    layout: 'index',
     program: {
       excursion: {
         name: 'Cultural Tour',
@@ -612,7 +612,7 @@ router.get('/program', function (req, res) {
 router.get('/web', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('web', {
-    layout: 'basic',
+    layout: 'index',
     web: {
       languages: [
         {
@@ -746,7 +746,7 @@ router.get('/js', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('js', {
-    layout: 'basic',
+    layout: 'index',
     name: 'JavaScript',
     description:
       'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
@@ -831,7 +831,7 @@ router.get('/car', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('car', {
-    layout: 'basic',
+    layout: 'index',
     make: 'Toyota',
     model: 'Camry',
     year: 2022,
@@ -935,7 +935,7 @@ router.get('/mac', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('mac', {
-    layout: 'basic',
+    layout: 'index',
     name: 'Apple MacBook Pro',
     description: 'The ultimate notebook for power users',
     price: 1999.99,
@@ -1028,7 +1028,7 @@ router.get('/facebook', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('facebook', {
-    layout: 'basic',
+    layout: 'index',
     name: 'Facebook',
     users: [
       {
@@ -1211,7 +1211,7 @@ router.get('/task21', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task21', {
-    layout: 'basic',
+    layout: 'index',
     heading: {
       main: {
         title: 'JavaScript',
@@ -1287,7 +1287,7 @@ router.get('/task22', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task22', {
-    layout: 'basic',
+    layout: 'index',
     page_header: {
       title: 'InnovaMind',
       description: 'Welcome to our wonderful community',
@@ -1352,7 +1352,7 @@ router.get('/task31', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('task31', {
-    layout: 'basic',
+    layout: 'index',
     navigation: {
       links: [
         {
@@ -3714,6 +3714,113 @@ router.get('/shopcatalog', function (req, res) {
           link: 'https://www.youtube.com/about/',
         },
       ],
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
+
+// ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/index8', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('index8', {
+    layout: 'index',
+    buttons: [
+      {
+        text: 'Bio',
+        href: '/bio',
+      },
+      {
+        text: 'Car',
+        href: '/car',
+      },
+      {
+        text: 'Education',
+        href: '/education ',
+      },
+      {
+        text: 'Facebook',
+        href: '/facebook ',
+      },
+      {
+        text: 'Js',
+        href: '/js ',
+      },
+      {
+        text: 'Mac',
+        href: '/mac ',
+      },
+      {
+        text: 'Person',
+        href: '/person ',
+      },
+      {
+        text: 'Program',
+        href: '/program ',
+      },
+      {
+        text: 'Shopcart',
+        href: '/shopcart ',
+      },
+      {
+        text: 'Shopcatalog',
+        href: '/shopcatalog',
+      },
+      {
+        text: 'Shophome',
+        href: '/shophome',
+      },
+      {
+        text: 'Shoporder',
+        href: '/shoporder',
+      },
+      {
+        text: 'Shopproduct',
+        href: '/shopproduct',
+      },
+      {
+        text: 'Shopprofile',
+        href: '/shopprofile',
+      },
+      {
+        text: 'Shopreview',
+        href: '/shopreview',
+      },
+      {
+        text: 'Skills',
+        href: '/skills',
+      },
+      {
+        text: 'Summary',
+        href: '/summary',
+      },
+      {
+        text: 'Task21',
+        href: '/task21',
+      },
+      {
+        text: 'Task22',
+        href: '/task22',
+      },
+      {
+        text: 'Task31',
+        href: '/task31',
+      },
+      {
+        text: 'Web',
+        href: '/web',
+      },
+      {
+        text: 'Work',
+        href: '/work',
+      },
     ],
   })
   //                  ↑↑ сюди вводимо JSON дані
