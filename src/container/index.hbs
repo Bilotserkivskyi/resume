@@ -1,11 +1,21 @@
-{{!-- 
-Це код container файлу для index сторінки, 
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
- --}}
-
-<h1>Hello world</h1>
-
-{{!-- 
-    Цей код містить лише те, що буде виводитись в <body>
-    Адже наш layout/default.hbs має вже структуру HTML
---}}
+<div>
+    <main>
+        <div class="row">
+            <div>
+                <h1>Список сторінок</h1>
+            </div>
+            <p class="col-6 mt-4">
+                Це мій перший проект, виконаний без використання контруктора. Було не дуже просто, але все зроблено!
+            </p>
+            <div class="row">
+                <div class="col-12 mt-4">
+                    {{#each buttons}}
+                        <div class="mb-2">
+                            <a class="col-3 btn btn-primary btn-sm" href="{{href}}">{{text}}</a>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
