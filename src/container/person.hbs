@@ -1,6 +1,7 @@
 <div>
     {{#with person}}
     <main>
+        <div class="ms-4">
          <h1>{{name}}</h1>
          <br>
             <div>
@@ -12,7 +13,7 @@
 
             <div>
                 <h3>Adress:</h3>
-                <address>                   
+                <address class="ms-4">                   
                         {{#with address}}                        
                             {{street}},
                             {{city}},                       
@@ -24,7 +25,7 @@
             </div>
             <div>            
                 <h3>Education:</h3>                
-                <dl>            
+                <dl class="ms-4">            
                     {{#each education}}            
                         <dd>{{degree}}</dd>
                         <dd>{{major}}</dd>
@@ -37,7 +38,7 @@
             <div> 
                 <div>                           
                 <h3>Work experience:</h3>
-                    <p>
+                    <p class="ms-4">
                         <dl>      
                             {{#each workExperience}}            
                                 <dt><h4>Company: {{company}}</h4></dl>
@@ -124,7 +125,8 @@
                         {{/each}}
                     </p>
             </div>
-            <hr>  
+            <hr>
+        </div>  
     </main>
     {{/with}}
 </div>
