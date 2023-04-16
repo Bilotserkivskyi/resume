@@ -1,16 +1,16 @@
-<div class="card text-bg-light"> 
+<div class="card"> 
     <div class="row">
         {{#with navigation}}
-            <h1 class="col-4 ps-4">{{Logo}}</h1>
-            {{#each links}}
-                <span class="col-1 nav mt-1 ms-2 px-5">
-                    <a class="nav-item nav-link
-                    {{#if href}} active {{else}} disabled {{/if}}"
-                    href="{{href}}">
-                    {{text}}
-                    </a>
-                </span>
-            {{/each}}
+            <h1 class="col-5 ps-4">{{Logo}}</h1>
+            <div class="col-7 mt-1 nav text-end">
+                {{#each links}}
+                        <a class="ms-3 nav-item nav-link
+                        {{#if href}} active {{else}} disabled {{/if}}"
+                        href="{{href}}">
+                        {{text}}
+                        </a>
+                {{/each}}
+            </div>
         {{/with}}
     </div>
 </div>
